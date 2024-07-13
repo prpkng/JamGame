@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts
+namespace Game
 {
     public class CameraFollow : MonoBehaviour
     {
