@@ -6,6 +6,7 @@ public class ThirdPersonMovement : MonoBehaviour
 {
     [SerializeField] private CharacterController character;
     [SerializeField] private float speed;
+    [SerializeField] private float gravity;
     [SerializeField] private float acceleration = 0;
     [SerializeField] private float deceleration = 0;
 
@@ -33,7 +34,10 @@ public class ThirdPersonMovement : MonoBehaviour
 
         var targetSpd = inputDirection.normalized * speed;
         velocity = Vector3.Lerp(velocity, targetSpd, accelRate);
-        
+
+        velocity.y = yVel;
+
+        velocity += gravity * Time.deltaTime * Vector3.down;
 
         character.Move(velocity * Time.deltaTime);
 
