@@ -6,43 +6,37 @@ namespace Game
 {
     public class ThirdPersonMovement : MonoBehaviour
     {
-        [SerializeField] private CharacterController character;
+        [SerializeField] private Rigidbody rb;
         [SerializeField] private float speed;
-        [SerializeField] private float gravity;
         [SerializeField] private float acceleration = 0;
         [SerializeField] private float deceleration = 0;
 
-        void Start()
-        {
+        [SerializeField] private float faceRotationSpeed = 0f;
 
+
+        private Vector3 inputDirection;
+
+        private float targetAngle;
+
+        private void Update()
+        {
+            Vector3 euler = transform.eulerAngles;
+            euler.y = Mathf.LerpAngle(euler.y, 90-targetAngle, MathUtils.DeltaRelativize(faceRotationSpeed));
+            transform.eulerAngles = euler;
         }
 
-        private Vector3 velocity;
-
-        void Update()
+        void FixedUpdate()
         {
-            var inputDirection = new Vector3(InputManager.HorizontalMoveInput, 0, InputManager.VerticalMoveInput);
+            inputDirection = new Vector3(InputManager.HorizontalMoveInput, 0, InputManager.VerticalMoveInput);
+            if (inputDirection.sqrMagnitude != 0)
+                targetAngle = Mathf.Atan2(inputDirection.z, inputDirection.x) * Mathf.Rad2Deg;
             inputDirection.Normalize();
 
-            var yVel = velocity.y;
+            float accelRate = MathUtils.FixedDeltaRelativize(inputDirection.sqrMagnitude == 0 ? deceleration : acceleration);
 
-
-            var accelRate = inputDirection.sqrMagnitude == 0 ? deceleration : acceleration;
-
-            if (accelRate == 0)
-                accelRate = 1;
-            else
-                accelRate = Time.deltaTime / accelRate;
-
-            var targetSpd = inputDirection.normalized * speed;
-            velocity = Vector3.Lerp(velocity, targetSpd, accelRate);
-
-            velocity.y = yVel;
-
-            velocity += gravity * Time.deltaTime * Vector3.down;
-
-            character.Move(velocity * Time.deltaTime);
-
+            Vector3 targetSpd = inputDirection.normalized * speed;
+            targetSpd.y = rb.velocity.y;
+            rb.velocity = Vector3.Lerp(rb.velocity, targetSpd, accelRate);
         }
     }
 

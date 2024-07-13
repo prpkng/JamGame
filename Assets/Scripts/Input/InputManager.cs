@@ -13,6 +13,8 @@ namespace Game.Input
             playerInput.onActionTriggered += OnActionTriggered;
         }
 
+        public const float GamepadDeadzone = 0.25f;
+
         public static float HorizontalMoveInput { get; private set; }
         public static float VerticalMoveInput { get; private set; }
 
@@ -24,8 +26,8 @@ namespace Game.Input
             {
                 case "Move":
                     var value = obj.action.ReadValue<Vector2>(); ;
-                    HorizontalMoveInput = value.x;
-                    VerticalMoveInput = value.y;
+                    HorizontalMoveInput = Mathf.Abs(value.x) > GamepadDeadzone ? value.x : 0;
+                    VerticalMoveInput = Mathf.Abs(value.y) > GamepadDeadzone ? value.y : 0;
                     break;
                 case "Run":
                     if (obj.started) IsHoldingRun = true;
