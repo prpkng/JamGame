@@ -1,5 +1,5 @@
 {
-    "name": "Controls",
+    "name": "GameActions",
     "maps": [
         {
             "name": "Game",
@@ -18,6 +18,15 @@
                     "name": "Run",
                     "type": "Button",
                     "id": "a384d38c-cb91-43ec-90b0-5b7f87ffe367",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "e7137cbe-9f6e-4c5e-9834-0f6dcdee065d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -110,6 +119,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5131df17-4f10-40dd-83c5-22c5dc7655e2",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f2460b1c-abed-415a-b97a-f37bfd090a0a",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
