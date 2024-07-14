@@ -16,7 +16,7 @@ namespace Game.Player
         [SerializeField] private float maxInteractDistance = 1.5f;
 
         private void OnEnable() => InputManager.InteractPressed += OnInteractPressed;
-        private void OnDisable() => InputManager.InteractPressed += OnInteractPressed;
+        private void OnDisable() => InputManager.InteractPressed -= OnInteractPressed;
 
         private void OnInteractPressed()
         {
