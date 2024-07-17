@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
-using UnityEngine.UI;
 
-namespace Assets.Scripts.Systems.Common
+namespace Game.Systems.Common
 {
     public class CollisionMessenger : MonoBehaviour
     {

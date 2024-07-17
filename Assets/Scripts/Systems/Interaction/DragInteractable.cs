@@ -6,22 +6,23 @@ namespace Game.Systems.Interaction
 {
     public class DragInteractable : Interactable
     {
-
+        [SerializeField] private Collider col;
         [SerializeField] private Rigidbody rb;
 
-        private CharacterJoint joint;
+        private SpringJoint joint;
+        private Vector3 positionOffset;
 
         public override void Interacted(PlayerInteractor interactor)
         {
             base.Interacted(interactor);
             InputManager.InteractReleased += StopDragging;
-            joint = interactor.gameObject.AddComponent<CharacterJoint>();
-            joint.connectedBody = rb;
-            joint.lowTwistLimit = new SoftJointLimit();
-            joint.highTwistLimit = new SoftJointLimit();
-            joint.swing1Limit = new SoftJointLimit() { limit = 60 };
-            joint.swing2Limit = new SoftJointLimit();
             PlayerManager.CurrentPlayer.carryingObject = true;
+            positionOffset = PlayerManager.CurrentPlayer.movement.rb.position - rb.position;
+            joint = interactor.gameObject.AddComponent<SpringJoint>();
+            joint.connectedBody = rb;
+            joint.spring = 200f;
+            joint.anchor = col.ClosestPointOnBounds(PlayerManager.CurrentPlayer.movement.rb.position);
+            Debug.DrawRay(col.ClosestPointOnBounds(PlayerManager.CurrentPlayer.movement.rb.position), Vector3.up, Color.green, 100f);
         }
 
         private void StopDragging()

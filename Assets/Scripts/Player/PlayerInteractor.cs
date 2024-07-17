@@ -1,9 +1,7 @@
 ﻿using System.Collections;
-using Assets.Scripts.Systems.Common;
+using Game.Systems.Common;
 using Game.Input;
 using Game.Systems.Interaction;
-using Unity.VisualScripting;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 namespace Game.Player

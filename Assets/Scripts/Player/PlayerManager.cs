@@ -22,7 +22,7 @@ namespace Game.Player
         public bool carryingObject { get => isPlayerCarryingObject; set
             {
                 isPlayerCarryingObject = value;
-                movement.faceRotationSpeed = value ? Mathf.Infinity : 0.025f;
+                movement.faceMovement = !value;
             }
         }
     }
