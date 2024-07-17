@@ -1,6 +1,9 @@
 ﻿using System.Collections;
+using Assets.Scripts.Systems.Common;
 using Game.Input;
-using Game.Systems.Interactable;
+using Game.Systems.Interaction;
+using Unity.VisualScripting;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 namespace Game.Player
@@ -12,52 +15,58 @@ namespace Game.Player
     /// </summary>
     public class PlayerInteractor : MonoBehaviour
     {
+        [SerializeField] private CollisionMessenger collisionMessenger;
         [SerializeField] private LayerMask interactionLayer;
         [SerializeField] private float maxInteractDistance = 1.5f;
 
-        private void OnEnable() => InputManager.InteractPressed += OnInteractPressed;
-        private void OnDisable() => InputManager.InteractPressed -= OnInteractPressed;
+        private void OnEnable()
+        {
+            InputManager.InteractPressed += OnInteractPressed;
+            collisionMessenger.EnteredHitbox += EnteredCollision;
+            collisionMessenger.ExitedHitbox += ExitedCollision;
+        }
+
+        private void ExitedCollision(Collider collider)
+        {
+            if (!collider.TryGetComponent(out Interactable interactable))
+                return;
+
+            interactable.Unhovered(this);
+            target = null;
+            print("Exited!");
+        }
+
+        private void EnteredCollision(Collider collider)
+        {
+            if (!collider.TryGetComponent(out Interactable interactable))
+                return;
+
+            interactable.Hovered(this);
+            target = collider;
+            print("Entered!"); 
+        }
+
+        private Collider target;
+
+        private void OnDisable()
+        {
+            InputManager.InteractPressed -= OnInteractPressed;
+            collisionMessenger.EnteredHitbox -= EnteredCollision;
+            collisionMessenger.ExitedHitbox -= ExitedCollision;
+        }
 
         private void OnInteractPressed()
         {
-            if (lastHitInfo.collider != null &&
-                lastHitInfo.collider.TryGetComponent(out Interactable interactable))
-            {
-                interactable.Interacted(this);
-            }
-        }
+            if (!collisionMessenger.isInsideHitbox)
+                return;
 
-        private void HandleHovering(RaycastHit hitInfo)
-        {
-            // When the collider is null and was NOT null, send the UNHOVER message
-            if (hitInfo.collider == null &&
-                lastHitInfo.collider != null && 
-                lastHitInfo.collider.TryGetComponent(out Interactable interactable))
-            {
-                interactable.Unhovered(this);
-            }
+            if (target == null)
+                return;
 
-            // When the collider is not null, and WAS indeed null,  send the HOVER message
-            if (hitInfo.collider != null && 
-                hitInfo.collider != lastHitInfo.collider &&
-                hitInfo.collider.TryGetComponent(out interactable))
-            {
-                interactable.Hovered(this);
-            }
-        }
+            if (!target.TryGetComponent(out Interactable interactable))
+                return;
 
-        private RaycastHit lastHitInfo;
-        private void FixedUpdate()
-        {
-            Physics.Raycast(transform.position,
-                            transform.forward,
-                            out RaycastHit hitInfo,
-                            maxInteractDistance,
-                            interactionLayer);
-
-            HandleHovering(hitInfo);
-
-            lastHitInfo = hitInfo;
+            interactable.Interacted(this);
         }
     }
 }

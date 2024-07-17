@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 namespace Game.Input
 {
     public class InputManager : MonoBehaviour
@@ -43,6 +44,10 @@ namespace Game.Input
                 case "Run":
                     if (obj.started) IsHoldingRun = true;
                     else if (obj.canceled) IsHoldingRun = false;
+                    break;
+                case "Restart":
+                    if (obj.started)
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                     break;
 
             }

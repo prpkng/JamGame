@@ -2,16 +2,15 @@ using Game.Input;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace Game
+namespace Game.Player
 {
     public class ThirdPersonMovement : MonoBehaviour
     {
-        [SerializeField] private Rigidbody rb;
-        [SerializeField] private float speed;
-        [SerializeField] private float acceleration = 0;
-        [SerializeField] private float deceleration = 0;
-
-        [SerializeField] private float faceRotationSpeed = 0f;
+        public Rigidbody rb;
+        public float speed;
+        public float acceleration = 0;
+        public float deceleration = 0;
+        public float faceRotationSpeed = 0f;
 
 
         private Vector3 inputDirection;

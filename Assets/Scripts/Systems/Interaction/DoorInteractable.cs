@@ -1,7 +1,7 @@
 using Game.Player;
 using UnityEngine;
 
-namespace Game.Systems.Interactable
+namespace Game.Systems.Interaction
 {
     public class DoorInteractable : Interactable
     {
