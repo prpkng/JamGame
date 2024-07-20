@@ -14,7 +14,7 @@ já está programado para fazer loop automaticamente.</value>
 			<value>Blue</value>
 		</property>
 		<property name="name">
-			<value>casa</value>
+			<value>mus_casa</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
