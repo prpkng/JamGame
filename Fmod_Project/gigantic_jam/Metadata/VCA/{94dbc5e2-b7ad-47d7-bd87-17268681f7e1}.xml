@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerVCA" id="{94dbc5e2-b7ad-47d7-bd87-17268681f7e1}">
+		<property name="note">
+			<value>vca para criar o botão do volume dos sfx ou efeitos sonoros</value>
+		</property>
+		<property name="name">
+			<value>sfx</value>
+		</property>
+		<relationship name="mixer">
+			<destination>{13fce28e-2954-4d09-a4f0-bbdc83a7df63}</destination>
+		</relationship>
+	</object>
+</objects>

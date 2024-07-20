@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Snapshot" id="{7fa9abfd-545c-459b-99e0-f8f5f1c72f17}">
+		<property name="note">
+			<value>esse snapshot ira ser chamado para a cena de gameplay</value>
+		</property>
+		<property name="name">
+			<value>gameplay</value>
+		</property>
+		<relationship name="mixer">
+			<destination>{13fce28e-2954-4d09-a4f0-bbdc83a7df63}</destination>
+		</relationship>
+		<relationship name="automatableProperties">
+			<destination>{ababeb0a-8269-45c7-ae89-c42473296393}</destination>
+		</relationship>
+		<relationship name="markerTracks">
+			<destination>{eaad179d-4aea-40e4-8664-3c6c4d4a85c7}</destination>
+		</relationship>
+		<relationship name="timeline">
+			<destination>{3c130675-b2cd-46c1-9e51-b28d93a8f0cf}</destination>
+		</relationship>
+		<relationship name="snapshotMasterTrack">
+			<destination>{ed954b79-a97f-4063-93da-1cdd9ea4b0fd}</destination>
+		</relationship>
+	</object>
+	<object class="EventAutomatableProperties" id="{ababeb0a-8269-45c7-ae89-c42473296393}" />
+	<object class="MarkerTrack" id="{eaad179d-4aea-40e4-8664-3c6c4d4a85c7}" />
+	<object class="Timeline" id="{3c130675-b2cd-46c1-9e51-b28d93a8f0cf}" />
+	<object class="SnapshotMasterTrack" id="{ed954b79-a97f-4063-93da-1cdd9ea4b0fd}" />
+</objects>

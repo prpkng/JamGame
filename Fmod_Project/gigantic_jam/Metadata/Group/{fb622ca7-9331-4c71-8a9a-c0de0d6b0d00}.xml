@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{fb622ca7-9331-4c71-8a9a-c0de0d6b0d00}">
+		<property name="note">
+			<value>encaminhamento de todos os arquivo de musica ou music</value>
+		</property>
+		<property name="name">
+			<value>music</value>
+		</property>
+		<relationship name="masters">
+			<destination>{ea715ada-c2f6-4997-add3-cdc7711ad09e}</destination>
+		</relationship>
+		<relationship name="effectChain">
+			<destination>{c8fa7071-4197-49b6-943d-5f9cab80965d}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{6c8167e8-6caa-4701-b415-1fbd54579332}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{dd4cb3e9-c8e0-4b6a-9978-8f2b04ad11da}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{c8fa7071-4197-49b6-943d-5f9cab80965d}">
+		<relationship name="effects">
+			<destination>{d24ad8d7-093a-4ae9-8979-968b8f5bef6b}</destination>
+			<destination>{9acb00f4-f984-4b49-a5d9-80f07f670f35}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{6c8167e8-6caa-4701-b415-1fbd54579332}" />
+	<object class="MixerBusFader" id="{d24ad8d7-093a-4ae9-8979-968b8f5bef6b}" />
+	<object class="ThreeEQEffect" id="{9acb00f4-f984-4b49-a5d9-80f07f670f35}">
+		<property name="crossoverSlope">
+			<value>2</value>
+		</property>
+	</object>
+</objects>

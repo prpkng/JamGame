@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{c0aef0e3-f8ef-4707-8ea5-b30f950ad730}">
+		<property name="name">
+			<value>tensao</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f93dd733-9dd6-4210-ba7c-8645c4369b01}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{2ed921a4-e9c6-41a4-aaac-1ecb976e1954}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{2ed921a4-e9c6-41a4-aaac-1ecb976e1954}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
