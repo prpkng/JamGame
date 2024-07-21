@@ -22,6 +22,9 @@ namespace Game.Input
 
         public static bool IsHoldingRun { get; private set; }
 
+        public static event Action MovePressed;
+        public static event Action MoveReleased;
+
         public static event Action InteractPressed;
         public static event Action InteractReleased;
 
@@ -37,6 +40,11 @@ namespace Game.Input
 
                     break;
                 case "Move":
+                    if (obj.started)
+                        MovePressed?.Invoke();
+                    else if (obj.canceled)
+                        MoveReleased?.Invoke();
+
                     var value = obj.action.ReadValue<Vector2>(); ;
                     HorizontalMoveInput = Mathf.Abs(value.x) > GAMEPAD_DEADZONE ? value.x : 0;
                     VerticalMoveInput = Mathf.Abs(value.y) > GAMEPAD_DEADZONE ? value.y : 0;

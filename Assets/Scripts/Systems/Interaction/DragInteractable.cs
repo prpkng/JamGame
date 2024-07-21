@@ -17,12 +17,11 @@ namespace Game.Systems.Interaction
             base.Interacted(interactor);
             InputManager.InteractReleased += StopDragging;
             PlayerManager.CurrentPlayer.carryingObject = true;
-            positionOffset = PlayerManager.CurrentPlayer.movement.rb.position - rb.position;
+            positionOffset = PlayerManager.CurrentPlayer.rigidbody.position - rb.position;
             joint = interactor.gameObject.AddComponent<SpringJoint>();
             joint.connectedBody = rb;
             joint.spring = 200f;
-            joint.anchor = col.ClosestPointOnBounds(PlayerManager.CurrentPlayer.movement.rb.position);
-            Debug.DrawRay(col.ClosestPointOnBounds(PlayerManager.CurrentPlayer.movement.rb.position), Vector3.up, Color.green, 100f);
+            joint.anchor = col.ClosestPointOnBounds(PlayerManager.CurrentPlayer.rigidbody.position);
         }
 
         private void StopDragging()

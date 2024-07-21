@@ -16,16 +16,14 @@ namespace Game.Player
 
         private Vector3 inputDirection;
 
-        
+
         private float targetAngle;
 
         private void Update()
         {
             if (!faceMovement) return;
             if (inputDirection.sqrMagnitude == 0) return;
-            var euler = transform.eulerAngles;
-            euler.y = Mathf.LerpAngle(euler.y, 90f-Mathf.Atan2(inputDirection.z, inputDirection.x) * Mathf.Rad2Deg, Time.deltaTime * faceRotationSpeed);
-            transform.eulerAngles = euler;
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(inputDirection), 1);
         }
 
         void FixedUpdate()

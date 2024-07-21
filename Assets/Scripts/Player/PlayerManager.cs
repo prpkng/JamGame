@@ -7,22 +7,24 @@ namespace Game.Player
         public static PlayerManager CurrentPlayer;
 
         public PlayerInteractor interactor;
-        public ThirdPersonMovement movement;
+        public new Rigidbody rigidbody;
 
         private void Awake()
         {
             CurrentPlayer = this;
             interactor = GetComponent<PlayerInteractor>();
-            movement = GetComponent<ThirdPersonMovement>();
+            rigidbody = GetComponent<Rigidbody>();
         }
 
 
         private bool isPlayerCarryingObject;
 
-        public bool carryingObject { get => isPlayerCarryingObject; set
+        public bool carryingObject
+        {
+            get => isPlayerCarryingObject; set
             {
                 isPlayerCarryingObject = value;
-                movement.faceMovement = !value;
+                // movement.faceMovement = !value;
             }
         }
     }
