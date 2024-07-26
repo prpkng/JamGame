@@ -51,6 +51,8 @@ namespace Game.Systems
                     return;
                 }
             }
+
+            Debug.LogError($"No state found with name: {name}");
         }
 
     }

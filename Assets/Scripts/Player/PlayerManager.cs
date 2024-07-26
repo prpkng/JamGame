@@ -1,3 +1,4 @@
+using Game.Input;
 using UnityEngine;
 
 namespace Game.Player
@@ -6,26 +7,35 @@ namespace Game.Player
     {
         public static PlayerManager CurrentPlayer;
 
-        public PlayerInteractor interactor;
-        public new Rigidbody rigidbody;
+        public MeshRenderer mesh;
+
+        [System.NonSerialized] public PlayerInteractor interactor;
+        [System.NonSerialized] public PlayerStateMachine playerStates;
+        [System.NonSerialized] public new Rigidbody rigidbody;
 
         private void Awake()
         {
             CurrentPlayer = this;
             interactor = GetComponent<PlayerInteractor>();
             rigidbody = GetComponent<Rigidbody>();
+            playerStates = GetComponent<PlayerStateMachine>();
         }
 
 
-        private bool isPlayerCarryingObject;
 
-        public bool carryingObject
+        public bool isDraggingObject;
+
+
+        public static void PlayerMovementStep(Vector3 inputDirection)
         {
-            get => isPlayerCarryingObject; set
-            {
-                isPlayerCarryingObject = value;
-                // movement.faceMovement = !value;
-            }
+            var rb = CurrentPlayer.rigidbody;
+            inputDirection.Normalize();
+
+            float accelRate = MathUtils.FixedDeltaRelativize(PlayerConstants.MOVEMENT_ACCELERATION);
+
+            Vector3 targetSpd = inputDirection.normalized * PlayerConstants.MOVEMENT_SPEED;
+            targetSpd.y = rb.velocity.y;
+            rb.AddForce((targetSpd - rb.velocity) * accelRate, ForceMode.VelocityChange);
         }
     }
 }

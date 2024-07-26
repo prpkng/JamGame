@@ -6,7 +6,6 @@ namespace Game.Player.States
 {
     public class IdleState : State
     {
-        public const float deceleration = .1f;
 
         public override void Entered(object[] args)
         {
@@ -29,7 +28,7 @@ namespace Game.Player.States
             var inputDirection = new Vector3(InputManager.HorizontalMoveInput, 0, InputManager.VerticalMoveInput);
             inputDirection.Normalize();
 
-            float accelRate = MathUtils.FixedDeltaRelativize(deceleration);
+            float accelRate = MathUtils.FixedDeltaRelativize(PlayerConstants.MOVEMENT_DECELERATION);
 
             rb.AddForce(-rb.velocity * accelRate, ForceMode.VelocityChange);
         }

@@ -7,8 +7,6 @@ namespace Game.Player.States
 {
     public class WalkState : State
     {
-        public const float acceleration = .1f;
-        public const float speed = 7f;
         public override void Entered(object[] args)
         { }
 
@@ -17,23 +15,19 @@ namespace Game.Player.States
 
         public override void FixedUpdate()
         {
-            var rb = PlayerManager.CurrentPlayer.rigidbody;
             var inputDirection = new Vector3(InputManager.HorizontalMoveInput, 0, InputManager.VerticalMoveInput);
-            inputDirection.Normalize();
 
-            float accelRate = MathUtils.FixedDeltaRelativize(acceleration);
-
-            Vector3 targetSpd = inputDirection.normalized * speed;
-            targetSpd.y = rb.velocity.y;
-            rb.AddForce((targetSpd - rb.velocity) * accelRate, ForceMode.VelocityChange);
+            PlayerManager.PlayerMovementStep(inputDirection);
 
             if (Mathf.Abs(inputDirection.sqrMagnitude) < Mathf.Epsilon)
             {
                 machine.Switch("idle");
                 return;
             }
+            
+            if (PlayerManager.CurrentPlayer.isDraggingObject) return;
 
-            var transform = PlayerManager.CurrentPlayer.transform;
+            var transform = PlayerManager.CurrentPlayer.mesh.transform;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(inputDirection), 0.25f);
         }
 

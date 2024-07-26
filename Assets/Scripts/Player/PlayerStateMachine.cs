@@ -3,9 +3,24 @@ using Game.Systems;
 using UnityEngine;
 namespace Game.Player
 {
+#if UNITY_EDITOR
+using UnityEditor;
+
+    [CustomEditor(typeof(PlayerStateMachine))]
+    public class PlayerStateMachineEditor: Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            base.OnInspectorGUI();
+            var obj = (PlayerStateMachine)target;
+            EditorGUILayout.LabelField("Current State", obj.machine?.currentStateName);
+        }
+    }
+#endif
+
     public class PlayerStateMachine : MonoBehaviour
     {
-        private StateMachine machine;
+        public StateMachine machine;
 
         private void Awake()
         {

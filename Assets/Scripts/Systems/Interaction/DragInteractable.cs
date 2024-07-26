@@ -16,7 +16,7 @@ namespace Game.Systems.Interaction
         {
             base.Interacted(interactor);
             InputManager.InteractReleased += StopDragging;
-            PlayerManager.CurrentPlayer.carryingObject = true;
+            PlayerManager.CurrentPlayer.isDraggingObject = true;
             positionOffset = PlayerManager.CurrentPlayer.rigidbody.position - rb.position;
             joint = interactor.gameObject.AddComponent<SpringJoint>();
             joint.connectedBody = rb;
@@ -28,7 +28,7 @@ namespace Game.Systems.Interaction
         {
             Destroy(joint);
             InputManager.InteractReleased -= StopDragging;
-            PlayerManager.CurrentPlayer.carryingObject = false;
+            PlayerManager.CurrentPlayer.isDraggingObject = false;
         }
     }
 }
