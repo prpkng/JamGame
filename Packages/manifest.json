@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "com.cysharp.unitask": "2.5.5",
+    "com.oddworm.dbgdraw": "https://github.com/pschraut/UnityDbgDraw.git",
     "com.unity.cinemachine": "2.10.1",
     "com.unity.collab-proxy": "2.4.3",
     "com.unity.ide.rider": "3.0.28",
@@ -42,8 +44,7 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0",
-    "com.cysharp.unitask": "2.5.5"
+    "com.unity.modules.xr": "1.0.0"
   },
   "scopedRegistries": [
     {

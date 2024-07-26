@@ -24,6 +24,7 @@ namespace Game.Player
 
 
         public bool isDraggingObject;
+        public Transform currentDraggingTransform;
 
 
         public static void PlayerMovementStep(Vector3 inputDirection)

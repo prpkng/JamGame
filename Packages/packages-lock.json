@@ -7,6 +7,15 @@
       "dependencies": {},
       "url": "https://package.openupm.com"
     },
+    "com.oddworm.dbgdraw": {
+      "version": "https://github.com/pschraut/UnityDbgDraw.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.test-framework": "1.1.3"
+      },
+      "hash": "0c627682d69e077f668b6f273d0320d6ae7c85fc"
+    },
     "com.unity.burst": {
       "version": "1.8.16",
       "depth": 1,

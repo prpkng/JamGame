@@ -24,11 +24,21 @@ namespace Game.Player.States
                 machine.Switch("idle");
                 return;
             }
-            
-            if (PlayerManager.CurrentPlayer.isDraggingObject) return;
 
             var transform = PlayerManager.CurrentPlayer.mesh.transform;
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(inputDirection), 0.25f);
+
+            if (PlayerManager.CurrentPlayer.isDraggingObject)
+            {
+                var dir = PlayerManager.CurrentPlayer.currentDraggingTransform.position - transform.position;
+                dir.y = 0;
+                dir.Normalize();
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), .25f);
+            }
+            else
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(inputDirection), 0.25f);
+            }
+
         }
 
         public override void LateUpdate()

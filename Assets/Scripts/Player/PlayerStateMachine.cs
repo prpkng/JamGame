@@ -30,11 +30,7 @@ using UnityEditor;
                     .Build();
         }
 
-        private void Update()
-        {
-            machine.currentState.Update();
-            print(machine.currentStateName);
-        }
+        private void Update() => machine.currentState.Update();
 
         private void FixedUpdate() =>
             machine.currentState.FixedUpdate();
