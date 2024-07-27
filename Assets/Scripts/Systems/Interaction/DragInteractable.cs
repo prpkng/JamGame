@@ -27,12 +27,11 @@ namespace Game.Systems.Interaction
             joint.xMotion = ConfigurableJointMotion.Locked;
             joint.yMotion = ConfigurableJointMotion.Locked;
             joint.zMotion = ConfigurableJointMotion.Locked;
-            joint.angularZMotion = ConfigurableJointMotion.Limited;
-            joint.angularZLimit = new SoftJointLimit() { limit = 30 };
-            joint.angularYZLimitSpring = new SoftJointLimitSpring() { spring = 100f };
             col.material = noFrictionMaterial;
 
-            joint.anchor = transform.worldToLocalMatrix.MultiplyVector(col.ClosestPointOnBounds(PlayerManager.CurrentPlayer.rigidbody.position) - col.bounds.center); 
+            var target = PlayerManager.CurrentPlayer.rigidbody.position;
+            target.y = col.bounds.center.y;
+            joint.anchor = transform.worldToLocalMatrix.MultiplyVector(target - col.bounds.center);
 
             PlayerManager.CurrentPlayer.currentDraggingTransform = rb.transform;
         }
