@@ -18,7 +18,7 @@ namespace Game.Systems.Interaction
         {
             base.Interacted(interactor);
             InputManager.InteractReleased += StopDragging;
-            PlayerManager.CurrentPlayer.isDraggingObject = true;
+            PlayerManager.CurrentPlayer.StartDragging();
 
 
             // Configurate Joint
@@ -42,7 +42,7 @@ namespace Game.Systems.Interaction
             Destroy(joint);
             col.material = null;
             InputManager.InteractReleased -= StopDragging;
-            PlayerManager.CurrentPlayer.isDraggingObject = false;
+            PlayerManager.CurrentPlayer.StopDragging();
         }
     }
 }

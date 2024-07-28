@@ -22,17 +22,31 @@ namespace Game.Player
         }
 
 
+        public void StartDragging()
+        {
+            playerStates.machine.Switch("drag");
+        }
 
-        public bool isDraggingObject;
+        public void StopDragging()
+        {
+            if (Mathf.Abs(InputManager.HorizontalMoveInput) +
+                Mathf.Abs(InputManager.VerticalMoveInput) > 0)
+                playerStates.machine.Switch("walk");
+            else
+                playerStates.machine.Switch("idle");
+        }
         public Transform currentDraggingTransform;
 
 
-        public static void PlayerMovementStep(Vector3 inputDirection)
+        public void PlayerMovementStep(Vector3 inputDirection)
         {
-            var rb = CurrentPlayer.rigidbody;
+            var rb = rigidbody;
             inputDirection.Normalize();
 
-            float accelRate = MathUtils.FixedDeltaRelativize(PlayerConstants.MOVEMENT_ACCELERATION);
+            float accelRate = MathUtils.FixedDeltaRelativize(
+                Mathf.Abs(inputDirection.sqrMagnitude) < Mathf.Epsilon
+                ? PlayerConstants.MOVEMENT_DECELERATION
+                : PlayerConstants.MOVEMENT_ACCELERATION);
 
             Vector3 targetSpd = inputDirection.normalized * PlayerConstants.MOVEMENT_SPEED;
             targetSpd.y = rb.velocity.y;

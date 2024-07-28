@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Game.Player.States
 {
-    public class WalkState : State
+    public class DragState : State
     {
         public override void Entered(object[] args)
         { }
@@ -19,14 +19,12 @@ namespace Game.Player.States
 
             PlayerManager.CurrentPlayer.PlayerMovementStep(inputDirection);
 
-            if (Mathf.Abs(inputDirection.sqrMagnitude) < Mathf.Epsilon)
-            {
-                machine.Switch("idle");
-                return;
-            }
-
             var transform = PlayerManager.CurrentPlayer.mesh.transform;
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(inputDirection), 0.25f);
+
+            var dir = PlayerManager.CurrentPlayer.currentDraggingTransform.position - transform.position;
+            dir.y = 0;
+            dir.Normalize();
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), .25f);
 
         }
 

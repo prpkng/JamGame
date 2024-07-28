@@ -4,10 +4,10 @@ using UnityEngine;
 namespace Game.Player
 {
 #if UNITY_EDITOR
-using UnityEditor;
+    using UnityEditor;
 
     [CustomEditor(typeof(PlayerStateMachine))]
-    public class PlayerStateMachineEditor: Editor
+    public class PlayerStateMachineEditor : Editor
     {
         public override void OnInspectorGUI()
         {
@@ -27,6 +27,7 @@ using UnityEditor;
             machine = new StateMachineBuilder()
                     .WithState(new IdleState(), "idle", true)
                     .WithState(new WalkState(), "walk")
+                    .WithState(new DragState(), "drag")
                     .Build();
         }
 

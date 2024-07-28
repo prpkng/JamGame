@@ -1245,7 +1245,6 @@ Transform:
   - {fileID: 769041705}
   - {fileID: 526593991}
   - {fileID: 941683788}
-  - {fileID: 789735956}
   - {fileID: 1042456386}
   - {fileID: 56301141}
   - {fileID: 1298868497}
@@ -1264,7 +1263,6 @@ Transform:
   - {fileID: 225967645}
   - {fileID: 174432290}
   - {fileID: 1192768534}
-  - {fileID: 621511358}
   - {fileID: 1727617541}
   - {fileID: 1862265814}
   - {fileID: 1399393127}
@@ -2061,7 +2059,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 405775647}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c83b774c0d06eb245848bf454d63df54,
         type: 3}
@@ -2128,12 +2126,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c83b774c0d06eb245848bf454d63df54, type: 3}
---- !u!4 &621511358 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c83b774c0d06eb245848bf454d63df54,
-    type: 3}
-  m_PrefabInstance: {fileID: 621511357}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &622652122 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6c5df56bf0b83d64a955aed4660b6c16,
@@ -2445,7 +2437,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 405775647}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 6c5df56bf0b83d64a955aed4660b6c16,
         type: 3}
@@ -2512,12 +2504,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c5df56bf0b83d64a955aed4660b6c16, type: 3}
---- !u!4 &789735956 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6c5df56bf0b83d64a955aed4660b6c16,
-    type: 3}
-  m_PrefabInstance: {fileID: 789735955}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &815002342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7625,3 +7611,5 @@ SceneRoots:
   - {fileID: 8158982189152237091}
   - {fileID: 1952495329}
   - {fileID: 882873305}
+  - {fileID: 789735955}
+  - {fileID: 621511357}

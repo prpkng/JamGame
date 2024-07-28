@@ -24,13 +24,7 @@ namespace Game.Player.States
 
         public override void FixedUpdate()
         {
-            var rb = PlayerManager.CurrentPlayer.rigidbody;
-            var inputDirection = new Vector3(InputManager.HorizontalMoveInput, 0, InputManager.VerticalMoveInput);
-            inputDirection.Normalize();
-
-            float accelRate = MathUtils.FixedDeltaRelativize(PlayerConstants.MOVEMENT_DECELERATION);
-
-            rb.AddForce(-rb.velocity * accelRate, ForceMode.VelocityChange);
+            PlayerManager.CurrentPlayer.PlayerMovementStep(Vector2.zero);
         }
 
         public override void LateUpdate()
