@@ -12,7 +12,7 @@ namespace Game.Player
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
-            var obj = (PlayerStateMachine)target;
+            var obj = (PlayerStateMachine) target;
             EditorGUILayout.LabelField("Current State", obj.machine?.currentStateName);
         }
     }
@@ -22,7 +22,7 @@ namespace Game.Player
     {
         public StateMachine machine;
 
-        private void Awake()
+        private void Start()
         {
             machine = new StateMachineBuilder()
                     .WithState(new IdleState(), "idle", true)

@@ -17,9 +17,9 @@ namespace Game.Systems.Level
 
         public int currentFloor = 0;
 
+
         public void ChangeFloor(int nextFloor)
         {
-            print($"Floor changed to {nextFloor}");
             if (nextFloor == currentFloor) return;
 
             floorBlendMaterial.SetFloat("_T", 0f);

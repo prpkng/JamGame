@@ -1,6 +1,7 @@
 using Game.Input;
 using Game.Systems;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 
 namespace Game.Player.States
 {
@@ -10,6 +11,7 @@ namespace Game.Player.States
         public override void Entered(object[] args)
         {
             InputManager.MovePressed += MovePressed;
+            PlayerManager.CurrentPlayer.rigidbody.isKinematic = true;
         }
 
         private void MovePressed()
@@ -20,6 +22,7 @@ namespace Game.Player.States
         public override void Exited()
         {
             InputManager.MovePressed -= MovePressed;
+            PlayerManager.CurrentPlayer.rigidbody.isKinematic = false;
         }
 
         public override void FixedUpdate()
