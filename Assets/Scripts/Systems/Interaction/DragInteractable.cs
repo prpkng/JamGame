@@ -14,35 +14,36 @@ namespace Game.Systems.Interaction
 
         private ConfigurableJoint joint;
 
+
         public override void Interacted(PlayerInteractor interactor)
         {
             base.Interacted(interactor);
             InputManager.InteractReleased += StopDragging;
-            PlayerManager.CurrentPlayer.StartDragging();
+            PlayerManager.LocalPlayer.StartDragging();
 
 
             // Configurate Joint
             joint = rb.gameObject.AddComponent<ConfigurableJoint>();
-            joint.connectedBody = PlayerManager.CurrentPlayer.rigidbody;
+            joint.connectedBody = PlayerManager.LocalPlayer.rigidbody;
             joint.xMotion = ConfigurableJointMotion.Locked;
             joint.yMotion = ConfigurableJointMotion.Locked;
             joint.zMotion = ConfigurableJointMotion.Locked;
             col.material = noFrictionMaterial;
 
-            var target = PlayerManager.CurrentPlayer.rigidbody.position;
+            var target = PlayerManager.LocalPlayer.rigidbody.position;
             target.y = col.bounds.center.y;
             joint.anchor = transform.worldToLocalMatrix.MultiplyVector(target - col.bounds.center);
 
-            PlayerManager.CurrentPlayer.currentDraggingTransform = rb.transform;
+            PlayerManager.LocalPlayer.currentDraggingTransform = rb.transform;
         }
 
         private void StopDragging()
         {
-            PlayerManager.CurrentPlayer.currentDraggingTransform = null;
+            PlayerManager.LocalPlayer.currentDraggingTransform = null;
             Destroy(joint);
             col.material = null;
             InputManager.InteractReleased -= StopDragging;
-            PlayerManager.CurrentPlayer.StopDragging();
+            PlayerManager.LocalPlayer.StopDragging();
         }
     }
 }

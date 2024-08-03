@@ -6,10 +6,11 @@ namespace Game.Player
 {
     public class PlayerManager : MonoBehaviour
     {
-        public static PlayerManager CurrentPlayer;
+        public static PlayerManager LocalPlayer;
 
         public MeshRenderer mesh;
 
+        [System.NonSerialized] public PlayerInventoryManager inventory;
         [System.NonSerialized] public PlayerInteractor interactor;
         [System.NonSerialized] public PlayerStateMachine playerStates;
         [System.NonSerialized] public new Rigidbody rigidbody;
@@ -20,11 +21,12 @@ namespace Game.Player
 
         private void Awake()
         {
-            CurrentPlayer = this;
+            LocalPlayer = this;
             interactor = GetComponent<PlayerInteractor>();
             rigidbody = GetComponent<Rigidbody>();
             collider = GetComponent<CapsuleCollider>();
             playerStates = GetComponent<PlayerStateMachine>();
+            inventory = GetComponent<PlayerInventoryManager>();
         }
 
 
@@ -51,6 +53,7 @@ namespace Game.Player
 
             var rb = rigidbody;
             inputDirection.Normalize();
+
 
 
             if (Physics.Raycast(rb.position, Vector3.down, out RaycastHit hit, 1.6f, groundMask))

@@ -11,7 +11,7 @@ namespace Game.Player.States
         public override void Entered(object[] args)
         {
             InputManager.MovePressed += MovePressed;
-            PlayerManager.CurrentPlayer.rigidbody.isKinematic = true;
+            PlayerManager.LocalPlayer.rigidbody.isKinematic = true;
         }
 
         private void MovePressed()
@@ -22,12 +22,12 @@ namespace Game.Player.States
         public override void Exited()
         {
             InputManager.MovePressed -= MovePressed;
-            PlayerManager.CurrentPlayer.rigidbody.isKinematic = false;
+            PlayerManager.LocalPlayer.rigidbody.isKinematic = false;
         }
 
         public override void FixedUpdate()
         {
-            PlayerManager.CurrentPlayer.PlayerMovementStep(Vector2.zero);
+            PlayerManager.LocalPlayer.PlayerMovementStep(Vector2.zero);
         }
 
         public override void LateUpdate()

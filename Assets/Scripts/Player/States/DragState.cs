@@ -17,11 +17,11 @@ namespace Game.Player.States
         {
             var inputDirection = new Vector3(InputManager.HorizontalMoveInput, 0, InputManager.VerticalMoveInput);
 
-            PlayerManager.CurrentPlayer.PlayerMovementStep(inputDirection);
+            PlayerManager.LocalPlayer.PlayerMovementStep(inputDirection);
 
-            var transform = PlayerManager.CurrentPlayer.mesh.transform;
+            var transform = PlayerManager.LocalPlayer.mesh.transform;
 
-            var dir = PlayerManager.CurrentPlayer.currentDraggingTransform.position - transform.position;
+            var dir = PlayerManager.LocalPlayer.currentDraggingTransform.position - transform.position;
             dir.y = 0;
             dir.Normalize();
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), .25f);

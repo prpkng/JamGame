@@ -17,7 +17,7 @@ namespace Game.Player.States
         {
             var inputDirection = new Vector3(InputManager.HorizontalMoveInput, 0, InputManager.VerticalMoveInput);
 
-            PlayerManager.CurrentPlayer.PlayerMovementStep(inputDirection);
+            PlayerManager.LocalPlayer.PlayerMovementStep(inputDirection);
 
             if (Mathf.Abs(inputDirection.sqrMagnitude) < Mathf.Epsilon)
             {
@@ -25,7 +25,7 @@ namespace Game.Player.States
                 return;
             }
 
-            var transform = PlayerManager.CurrentPlayer.mesh.transform;
+            var transform = PlayerManager.LocalPlayer.mesh.transform;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(inputDirection), 0.25f);
 
         }

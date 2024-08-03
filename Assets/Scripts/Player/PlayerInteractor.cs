@@ -31,7 +31,6 @@ namespace Game.Player
 
             interactable.Unhovered(this);
             target = null;
-            print("Exited!");
         }
 
         private void EnteredCollision(Collider collider)
@@ -41,7 +40,6 @@ namespace Game.Player
 
             interactable.Hovered(this);
             target = collider;
-            print("Entered!"); 
         }
 
         private Collider target;

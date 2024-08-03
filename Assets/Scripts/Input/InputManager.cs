@@ -13,6 +13,11 @@ namespace Game.Input
         private void Awake()
         {
             playerInput.onActionTriggered += OnActionTriggered;
+             
+            MovePressed = null;
+            MoveReleased = null;
+            InteractPressed = null;
+            InteractReleased = null;
         }
 
         public const float GAMEPAD_DEADZONE = 0.25f;
