@@ -1,32 +1,39 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEditor;
 using System.Collections.Generic;
+using UnityEditor;
+using System.Linq;
 
-public class NavMeshToMeshConverter : MonoBehaviour
+public static class NavMeshToMeshConverter
 {
-    public string assetName = "NavMeshMesh";
+    public const string DEFAULT_ASSET_NAME = "NavMeshMesh";
 
-    [ContextMenu("Convert NavMesh To Mesh")]
-    void ConvertNavMeshToMesh()
+    [MenuItem("Tools/Convert NavMesh To Mesh")]
+    public static void ConvertNavMeshToMesh()
     {
         NavMeshTriangulation navMeshData = NavMesh.CalculateTriangulation();
 
-        Mesh mesh = new Mesh();
-        mesh.vertices = navMeshData.vertices;
-        mesh.triangles = navMeshData.indices;
+        Mesh mesh = new()
+        {
+            vertices = navMeshData.vertices,
+            triangles = navMeshData.indices,
+        };
         mesh.RecalculateNormals();
 
-        SaveMesh(mesh, assetName);
+        SaveMesh(mesh, DEFAULT_ASSET_NAME);
     }
 
-    void SaveMesh(Mesh mesh, string name)
+    private static void SaveMesh(Mesh mesh, string name)
     {
         string path = "Assets/Models/BloodFloors/" + name + ".asset";
 
         AssetDatabase.CreateAsset(mesh, path);
         AssetDatabase.SaveAssets();
+        EditorGUIUtility.PingObject(mesh);
 
         Debug.Log("Mesh saved at: " + path);
     }
 }
+
+#endif
