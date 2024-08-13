@@ -1,16 +1,24 @@
 using Game.Player;
+using Oddworm.Framework;
 using UnityEngine;
 
 namespace Game.Systems.Interaction
 {
     public class DoorInteractable : Interactable
     {
+
+        private void Update()
+        {
+            gameObject.layer = INTERACTABLE_LAYER;
+        }
+
         [SerializeField] private Rigidbody rb;
         [SerializeField] private float doorOpenForce = 10;
         public override void Hovered(PlayerInteractor interactor) { }
 
         public override void Interacted(PlayerInteractor interactor)
         {
+            print("Interacted");
             rb.isKinematic = false;
             Vector3 dir = transform.position - interactor.transform.position;
             dir.y = 0;
