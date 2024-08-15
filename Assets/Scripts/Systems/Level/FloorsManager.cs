@@ -10,7 +10,7 @@ namespace Game.Systems.Level
     public class FloorsManager : MonoBehaviour
     {
         public static FloorsManager Instance;
-        [SerializeField] private RenderTexture[] floorRenderTextures;
+        public RenderTexture[] floorRenderTextures;
         [SerializeField] private Camera[] floorCameras;
 
         [SerializeField] private Material floorBlendMaterial;
