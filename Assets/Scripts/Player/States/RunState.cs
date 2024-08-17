@@ -1,6 +1,7 @@
 using System;
 using Game.Input;
 using Game.Systems;
+using Game.Systems.Noise;
 using UnityEngine;
 
 namespace Game.Player.States
@@ -29,6 +30,7 @@ namespace Game.Player.States
             var transform = PlayerManager.LocalPlayer.mesh.transform;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(inputDirection), 0.25f);
 
+            NoiseSystem.Instance.EmitNoise(PlayerConstants.RUN_NOISE_PER_SEC * Time.fixedDeltaTime);
         }
 
         public override void LateUpdate()
