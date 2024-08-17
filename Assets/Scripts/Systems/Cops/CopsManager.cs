@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Game.Systems.Path;
+using Game.Systems.Sound;
 using UnityEngine;
 
 namespace Game.Systems.Cops
@@ -32,6 +33,7 @@ namespace Game.Systems.Cops
             Debug.Log("Cops Arrived!");
             didCopsArrived = true;
 
+            BGMManager.SetTension(true);
 
             var behaviors = new CopController.CopBehavior[] {
                 CopController.CopBehavior.FrontDoor,

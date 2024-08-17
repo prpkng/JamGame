@@ -6,6 +6,10 @@ namespace Game.Systems.Sound
     public class BGMManager : MonoBehaviour
     {
 
+
+        public static void SetTension(bool value) =>
+            BGMEventInstance.setParameterByName("tensao", value ? 1 : 0, true);
+
         private static FMOD.Studio.EventInstance BGMEventInstance;
 
         [SerializeField] private FMODUnity.EventReference bgmEvent;
