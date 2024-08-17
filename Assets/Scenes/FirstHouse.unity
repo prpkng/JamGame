@@ -312,7 +312,7 @@ PrefabInstance:
     - target: {fileID: 836786858650684983, guid: df9bd1ec7c1ffd344a39b0355c966ffd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.052
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 836786858650684983, guid: df9bd1ec7c1ffd344a39b0355c966ffd,
         type: 3}
@@ -368,6 +368,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972070545935133338, guid: df9bd1ec7c1ffd344a39b0355c966ffd,
+        type: 3}
+      propertyPath: groundMask.m_Bits
+      value: 7168
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1357,6 +1362,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 1st_floor
       objectReference: {fileID: 0}
+    - target: {fileID: 1860641818344424419, guid: b5f5395b0e60d204aa955ef5d04e3669,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5136969768049950466, guid: b5f5395b0e60d204aa955ef5d04e3669,
         type: 3}
       propertyPath: m_IsActive
@@ -2163,6 +2173,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CornerStairs
       objectReference: {fileID: 0}
+    - target: {fileID: 1646593026254227178, guid: 79fd145396f402348a0a27d5fa7f0f33,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2721531332735357988, guid: 79fd145396f402348a0a27d5fa7f0f33,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2212,6 +2227,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 8835957785799803610, guid: 79fd145396f402348a0a27d5fa7f0f33,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

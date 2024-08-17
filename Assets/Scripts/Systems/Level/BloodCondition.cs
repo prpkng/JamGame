@@ -33,8 +33,6 @@ namespace Game.Systems.Level
 
                 var (pixelPos, pixelSize, floor) = splashLocations[i];
 
-                Debug.Log(pixelPos);
-
                 var rt = LevelManager.Instance.bloodRenderTextures[floor];
 
                 RenderTexture.active = rt;

@@ -1,5 +1,6 @@
 using Game.Input;
 using Oddworm.Framework;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Game.Player
@@ -45,28 +46,22 @@ namespace Game.Player
         }
         public Transform currentDraggingTransform;
 
-
         public void PlayerMovementStep(Vector3 inputDirection, float speed = PlayerConstants.WALK_SPEED)
         {
-
-
-
             var rb = rigidbody;
             inputDirection.Normalize();
 
-
-
-            if (Physics.Raycast(rb.position, Vector3.down, out RaycastHit hit, 1.6f, groundMask))
+            if (Physics.Raycast(collider.bounds.center, Vector3.down, out RaycastHit hit, 10f, groundMask, QueryTriggerInteraction.Ignore))
             {
                 inputDirection = Vector3.Lerp(inputDirection, Vector3.Reflect(inputDirection, hit.normal), .5f);
                 rb.velocity = inputDirection.normalized * speed;
 
-                if (!Physics.CheckBox(rb.position, new Vector3(collider.radius, .1f, collider.radius), Quaternion.identity, groundMask))
+                if (!Physics.CheckBox(rb.position, new Vector3(collider.radius, .1f, collider.radius), Quaternion.identity, groundMask, QueryTriggerInteraction.Ignore))
                 {
-                    print("Not grounded!");
                     rb.position = new Vector3(rb.position.x, hit.point.y, rb.position.z);
                 }
             }
+
             float accelRate = MathUtils.FixedDeltaRelativize(
                 Mathf.Abs(inputDirection.sqrMagnitude) < Mathf.Epsilon
                 ? PlayerConstants.MOVEMENT_DECELERATION

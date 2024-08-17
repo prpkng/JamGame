@@ -32,7 +32,7 @@ namespace Game.Systems.Level
 
         private void Update()
         {
-            print(string.Join('|', levelEndingConditions.Select(l => string.Join(',', l.CompletionList.Select(b => b.ToString())))));
+            //print(string.Join('|', levelEndingConditions.Select(l => string.Join(',', l.CompletionList.Select(b => b.ToString())))));
         }
 
 

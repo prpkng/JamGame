@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Linq;
+using Game.Player;
 using UnityEngine;
 using UnityEngine.UIElements;
 
