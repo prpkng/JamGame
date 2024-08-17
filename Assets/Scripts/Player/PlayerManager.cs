@@ -46,7 +46,7 @@ namespace Game.Player
         public Transform currentDraggingTransform;
 
 
-        public void PlayerMovementStep(Vector3 inputDirection)
+        public void PlayerMovementStep(Vector3 inputDirection, float speed = PlayerConstants.WALK_SPEED)
         {
 
 
@@ -59,7 +59,7 @@ namespace Game.Player
             if (Physics.Raycast(rb.position, Vector3.down, out RaycastHit hit, 1.6f, groundMask))
             {
                 inputDirection = Vector3.Lerp(inputDirection, Vector3.Reflect(inputDirection, hit.normal), .5f);
-                rb.velocity = inputDirection.normalized * PlayerConstants.MOVEMENT_SPEED;
+                rb.velocity = inputDirection.normalized * speed;
 
                 if (!Physics.CheckBox(rb.position, new Vector3(collider.radius, .1f, collider.radius), Quaternion.identity, groundMask))
                 {
@@ -72,7 +72,7 @@ namespace Game.Player
                 ? PlayerConstants.MOVEMENT_DECELERATION
                 : PlayerConstants.MOVEMENT_ACCELERATION);
 
-            Vector3 targetSpd = inputDirection.normalized * PlayerConstants.MOVEMENT_SPEED;
+            Vector3 targetSpd = inputDirection.normalized * speed;
             targetSpd.y = rb.velocity.y;
             rb.AddForce((targetSpd - rb.velocity) * accelRate, ForceMode.VelocityChange);
 

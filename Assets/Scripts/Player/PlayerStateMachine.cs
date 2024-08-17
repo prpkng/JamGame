@@ -27,6 +27,7 @@ namespace Game.Player
             machine = new StateMachineBuilder()
                     .WithState(new IdleState(), "idle", true)
                     .WithState(new WalkState(), "walk")
+                    .WithState(new RunState(), "run")
                     .WithState(new DragState(), "drag")
                     .Build();
         }

@@ -8,9 +8,9 @@ namespace Game
         [SerializeField] private Transform target;
 
         [SerializeField] private float followSpeed;
-        void Update()
+        void FixedUpdate()
         {
-            transform.position = Vector3.Lerp(transform.position, target.position, followSpeed * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, target.position, followSpeed * Time.fixedDeltaTime);
         }
     }
 }

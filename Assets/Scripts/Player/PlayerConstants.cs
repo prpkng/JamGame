@@ -4,6 +4,7 @@ namespace Game.Player
     {
         public const float MOVEMENT_DECELERATION = .1f;
         public const float MOVEMENT_ACCELERATION = .1f;
-        public const float MOVEMENT_SPEED = 7f;
+        public const float WALK_SPEED = 5f;
+        public const float RUN_SPEED = 8.5f;
     }
 }

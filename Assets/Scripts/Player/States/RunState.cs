@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Game.Player.States
 {
-    public class WalkState : State
+    public class RunState : State
     {
         public override void Entered(object[] args)
         { }
@@ -15,10 +15,10 @@ namespace Game.Player.States
 
         public override void FixedUpdate()
         {
-            if (InputManager.IsHoldingRun) machine.Switch("run");
+            if (!InputManager.IsHoldingRun) machine.Switch("walk");
             var inputDirection = new Vector3(InputManager.HorizontalMoveInput, 0, InputManager.VerticalMoveInput);
 
-            PlayerManager.LocalPlayer.PlayerMovementStep(inputDirection, PlayerConstants.WALK_SPEED);
+            PlayerManager.LocalPlayer.PlayerMovementStep(inputDirection, PlayerConstants.RUN_SPEED);
 
             if (Mathf.Abs(inputDirection.sqrMagnitude) < Mathf.Epsilon)
             {
