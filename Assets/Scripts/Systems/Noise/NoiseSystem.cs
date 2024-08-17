@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Game.Systems.Cops;
 using UnityEngine;
 
 namespace Game.Systems.Noise
@@ -27,11 +28,16 @@ namespace Game.Systems.Noise
         {
             Debug.Assert(Instance != null);
 
-            noiseCounter = Mathf.Min(MAX_NOISE, noiseCounter + amount);
+            noiseCounter = Mathf.Min(MAX_NOISE + 1, noiseCounter + amount);
         }
 
         private void FixedUpdate()
         {
+            if (noiseCounter >= MAX_NOISE)
+            {
+                CopsManager.CallCops();
+            }
+
             if (noiseCounter >= 0)
                 noiseCounter -= noiseReducePerSecond * Time.fixedDeltaTime;
             else
