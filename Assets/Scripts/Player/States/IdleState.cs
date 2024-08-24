@@ -12,6 +12,7 @@ namespace Game.Player.States
         {
             InputManager.MovePressed += MovePressed;
             PlayerManager.LocalPlayer.rigidbody.isKinematic = true;
+            PlayerManager.LocalPlayer.animator.SetBool("Idle", true);
         }
 
         private void MovePressed()
@@ -23,6 +24,7 @@ namespace Game.Player.States
         {
             InputManager.MovePressed -= MovePressed;
             PlayerManager.LocalPlayer.rigidbody.isKinematic = false;
+            PlayerManager.LocalPlayer.animator.SetBool("Idle", false);
         }
 
         public override void FixedUpdate()

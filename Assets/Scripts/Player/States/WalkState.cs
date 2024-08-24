@@ -9,7 +9,8 @@ namespace Game.Player.States
     public class WalkState : State
     {
         public override void Entered(object[] args)
-        { }
+        {
+        }
 
         public override void Exited()
         { }
@@ -27,7 +28,7 @@ namespace Game.Player.States
                 return;
             }
 
-            var transform = PlayerManager.LocalPlayer.mesh.transform;
+            var transform = PlayerManager.LocalPlayer.mesh;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(inputDirection), 0.25f);
 
             NoiseSystem.Instance.EmitNoise(PlayerConstants.WALK_NOISE_PER_SEC * Time.fixedDeltaTime);

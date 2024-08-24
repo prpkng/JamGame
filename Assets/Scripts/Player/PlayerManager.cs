@@ -9,13 +9,14 @@ namespace Game.Player
     {
         public static PlayerManager LocalPlayer;
 
-        public MeshRenderer mesh;
+        public Transform mesh;
 
         [System.NonSerialized] public PlayerInventoryManager inventory;
         [System.NonSerialized] public PlayerInteractor interactor;
         [System.NonSerialized] public PlayerStateMachine playerStates;
         [System.NonSerialized] public new Rigidbody rigidbody;
         [System.NonSerialized] public new CapsuleCollider collider;
+        [System.NonSerialized] public Animator animator;
 
 
         [SerializeField] private LayerMask groundMask;
@@ -28,6 +29,7 @@ namespace Game.Player
             collider = GetComponent<CapsuleCollider>();
             playerStates = GetComponent<PlayerStateMachine>();
             inventory = GetComponent<PlayerInventoryManager>();
+            animator = GetComponentInChildren<Animator>();
         }
 
 
@@ -48,6 +50,8 @@ namespace Game.Player
 
         public void PlayerMovementStep(Vector3 inputDirection, float speed = PlayerConstants.WALK_SPEED)
         {
+
+
             var rb = rigidbody;
             inputDirection.Normalize();
 
