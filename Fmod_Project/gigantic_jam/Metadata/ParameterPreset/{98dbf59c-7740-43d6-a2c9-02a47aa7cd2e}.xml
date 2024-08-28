@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{98dbf59c-7740-43d6-a2c9-02a47aa7cd2e}">
+		<property name="name">
+			<value>aspirador</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f93dd733-9dd6-4210-ba7c-8645c4369b01}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{98db733a-083d-4102-acb5-7c596b6cc5c3}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{98db733a-083d-4102-acb5-7c596b6cc5c3}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{866e4c6b-5772-4b90-958f-bfc079f77198}">
+		<property name="assetPath">
+			<value>sfx_aspirador.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.7707482993197283</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6c0e2692-5582-44ca-8feb-de953140887c}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{17157e00-8f41-42b5-a26f-395dcea7ad67}">
+		<property name="name">
+			<value>passos</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f93dd733-9dd6-4210-ba7c-8645c4369b01}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{338ddfbd-a2b3-4044-a210-56a3d09db06b}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{338ddfbd-a2b3-4044-a210-56a3d09db06b}">
+		<property name="minimum">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>2</value>
+		</property>
+	</object>
+</objects>

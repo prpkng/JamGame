@@ -22,6 +22,9 @@ já está programado para fazer loop automaticamente.</value>
 		<relationship name="folder">
 			<destination>{e01ce9d2-4cf0-4cb6-a9ff-45be5616f91b}</destination>
 		</relationship>
+		<relationship name="tags">
+			<destination>{ad8bd980-d003-469b-a0b3-be6db4d854a4}</destination>
+		</relationship>
 		<relationship name="mixer">
 			<destination>{29299dc1-c324-4113-9bc8-ccc42a8f9898}</destination>
 		</relationship>

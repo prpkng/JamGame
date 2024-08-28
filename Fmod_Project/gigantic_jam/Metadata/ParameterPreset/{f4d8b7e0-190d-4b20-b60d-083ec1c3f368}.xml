@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{f4d8b7e0-190d-4b20-b60d-083ec1c3f368}">
+		<property name="name">
+			<value>scanner</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f93dd733-9dd6-4210-ba7c-8645c4369b01}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{9f389055-fafd-48bd-a015-297bc157fc10}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{9f389055-fafd-48bd-a015-297bc157fc10}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

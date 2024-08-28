@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{aa270aae-b4d7-43d1-a6d1-a4e015c72e10}">
+		<property name="name">
+			<value>esfregao</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f93dd733-9dd6-4210-ba7c-8645c4369b01}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{6f10d6ee-9cbe-4858-854e-539c62948e69}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{6f10d6ee-9cbe-4858-854e-539c62948e69}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

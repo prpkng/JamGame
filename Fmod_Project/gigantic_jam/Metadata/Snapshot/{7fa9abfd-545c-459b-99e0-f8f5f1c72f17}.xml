@@ -22,9 +22,49 @@
 		<relationship name="snapshotMasterTrack">
 			<destination>{ed954b79-a97f-4063-93da-1cdd9ea4b0fd}</destination>
 		</relationship>
+		<relationship name="snapshotProperties">
+			<destination>{98b2dfec-22d3-4310-8704-e1c81bb2e2c5}</destination>
+			<destination>{934af4b5-62f8-45a2-a052-beb4dea6866c}</destination>
+		</relationship>
+		<relationship name="snapshotTracks">
+			<destination>{26067d74-3d72-4ea9-bb2f-e657193e8c4a}</destination>
+			<destination>{f0f55758-af4a-440d-b7d6-76fb36afa22a}</destination>
+		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{ababeb0a-8269-45c7-ae89-c42473296393}" />
 	<object class="MarkerTrack" id="{eaad179d-4aea-40e4-8664-3c6c4d4a85c7}" />
 	<object class="Timeline" id="{3c130675-b2cd-46c1-9e51-b28d93a8f0cf}" />
 	<object class="SnapshotMasterTrack" id="{ed954b79-a97f-4063-93da-1cdd9ea4b0fd}" />
+	<object class="SnapshotProperty" id="{98b2dfec-22d3-4310-8704-e1c81bb2e2c5}">
+		<property name="propertyName">
+			<value>volume</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+		<relationship name="automatableObject">
+			<destination>{94dbc5e2-b7ad-47d7-bd87-17268681f7e1}</destination>
+		</relationship>
+	</object>
+	<object class="SnapshotProperty" id="{934af4b5-62f8-45a2-a052-beb4dea6866c}">
+		<property name="propertyName">
+			<value>volume</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+		<relationship name="automatableObject">
+			<destination>{ff73fe5c-4285-4bf1-9301-5dbf6690c457}</destination>
+		</relationship>
+	</object>
+	<object class="SnapshotTrack" id="{26067d74-3d72-4ea9-bb2f-e657193e8c4a}">
+		<relationship name="mixerStrip">
+			<destination>{94dbc5e2-b7ad-47d7-bd87-17268681f7e1}</destination>
+		</relationship>
+	</object>
+	<object class="SnapshotTrack" id="{f0f55758-af4a-440d-b7d6-76fb36afa22a}">
+		<relationship name="mixerStrip">
+			<destination>{ff73fe5c-4285-4bf1-9301-5dbf6690c457}</destination>
+		</relationship>
+	</object>
 </objects>

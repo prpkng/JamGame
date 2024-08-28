@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ceb67829-9d92-4856-b71d-a7ff61a9fe2b}">
+		<property name="assetPath">
+			<value>sfx_corpo_arrastando.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>8.0700000000000003</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6c0e2692-5582-44ca-8feb-de953140887c}</destination>
+		</relationship>
+	</object>
+</objects>

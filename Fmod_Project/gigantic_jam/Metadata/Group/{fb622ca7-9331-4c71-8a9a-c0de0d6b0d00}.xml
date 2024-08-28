@@ -4,6 +4,9 @@
 		<property name="note">
 			<value>encaminhamento de todos os arquivo de musica ou music</value>
 		</property>
+		<property name="color">
+			<value>Blue</value>
+		</property>
 		<property name="name">
 			<value>music</value>
 		</property>

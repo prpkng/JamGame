@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{8f67137d-7cdc-49bf-b0e4-25cc7e01d3ea}">
+		<property name="assetPath">
+			<value>sfx_passos_2_lentos_molhados_1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.42369614512471654</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6c0e2692-5582-44ca-8feb-de953140887c}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ea64b499-d692-4722-a304-30c84f48149d}">
+		<property name="assetPath">
+			<value>sfx_passos_rapidos_molhados_2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.73666666666666669</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6c0e2692-5582-44ca-8feb-de953140887c}</destination>
+		</relationship>
+	</object>
+</objects>
