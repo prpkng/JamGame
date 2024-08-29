@@ -4,15 +4,16 @@
 		<property name="note">
 			<value>3D - Som do aspirador
 
-vai funcionar como loop e tem um sustain point para definir 
-para definir região do loop e quando os aspirador desliga 
+vai funcionar com loop 
+para definir região do loop e quando os aspirador desligar 
 
 vai usar a condição dos parâmetros do aspirador
 
-parâmetro 0.00 até 0.99 inicia o som e loop -  vai funcionar como acelerador de jogo
-de corrida. aperta para acelerar e quando terminar chama o parametro 1.00
-parâmetro 1.00 finaliza o som - quando finalizar, deve-se chamar esse parâmetro
-para desligar o aspirador.</value>
+parâmetro 0.00 até 0.99 inicia o som -  apenas vai ligar e desligar. para gerar o loop
+deve-se chamar o parametro 1.00
+
+parâmetro 1.00 faz o loop do aspirador - vai ficar em loop enquanto o jogador limpa
+o ambiente. para desligar deve-se chamar o parâmetro 0.99</value>
 		</property>
 		<property name="color">
 			<value>Green</value>
@@ -122,6 +123,9 @@ para desligar o aspirador.</value>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{fb380f65-a52c-45a3-80db-e49436e6bb5e}">
+		<property name="volume">
+			<value>-2</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{8133e49b-41a0-4a2c-a2db-56f509b19b0b}</destination>
 		</relationship>
@@ -289,6 +293,7 @@ para desligar o aspirador.</value>
 		<relationship name="effects">
 			<destination>{c0303b42-c47d-43be-9a37-25583633f78c}</destination>
 			<destination>{6ba5439d-9be5-4aac-9f86-f31904383ca5}</destination>
+			<destination>{8855e503-7c52-44ea-abb2-f7359459c8df}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{a99f6f7b-44db-4806-9fea-a88ffdcb208f}" />
@@ -355,6 +360,7 @@ para desligar o aspirador.</value>
 	</object>
 	<object class="MixerBusFader" id="{c0303b42-c47d-43be-9a37-25583633f78c}" />
 	<object class="SpatialiserEffect" id="{6ba5439d-9be5-4aac-9f86-f31904383ca5}" />
+	<object class="LoudnessMeter" id="{8855e503-7c52-44ea-abb2-f7359459c8df}" />
 	<object class="AutomationPoint" id="{5bcf7d29-818a-407d-af19-a8dc66595f46}">
 		<property name="position">
 			<value>0</value>

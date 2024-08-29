@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{bcfec634-d21a-47fd-9b19-407c23c04e8e}">
+		<property name="note">
+			<value>3D - Passos lentos e molhados de sangue - Toda vem que os pés tocarem ao chão, 
+deve-se chamar esse evento. não contém loop mas tem uma automatização para variar os 
+sons dos passos</value>
+		</property>
 		<property name="color">
 			<value>Green</value>
 		</property>

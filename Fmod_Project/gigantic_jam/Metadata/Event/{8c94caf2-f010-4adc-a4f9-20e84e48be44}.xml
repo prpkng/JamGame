@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{8c94caf2-f010-4adc-a4f9-20e84e48be44}">
+		<property name="note">
+			<value>2D - Contagem regressiva de 10 segundo para o fim do tempo 
+
+</value>
+		</property>
 		<property name="color">
 			<value>Green</value>
 		</property>
@@ -8,7 +13,7 @@
 			<value>sfx_contagem_regressiva</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{d8d34f31-4788-4890-9ffc-e60fa74a4b64}</destination>
@@ -65,11 +70,18 @@
 	<object class="EventAutomatableProperties" id="{79131514-3c26-4878-97cd-c6ea0289d4bd}" />
 	<object class="MarkerTrack" id="{fa4d59a6-e6c6-41ed-8945-a2ac052ef6eb}" />
 	<object class="GroupTrack" id="{0aaa075d-b067-4718-8ac4-3bbe9777664f}">
+		<relationship name="modules">
+			<destination>{cf37094f-74cf-4b4f-94bc-2eea086a49c9}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{1a0855ab-2d1b-4ab7-9819-98db686c7f05}</destination>
 		</relationship>
 	</object>
-	<object class="Timeline" id="{9e44adcc-58a3-40c1-b7a3-1fa986579ceb}" />
+	<object class="Timeline" id="{9e44adcc-58a3-40c1-b7a3-1fa986579ceb}">
+		<relationship name="modules">
+			<destination>{cf37094f-74cf-4b4f-94bc-2eea086a49c9}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerMaster" id="{b5981504-4a64-4d7e-bce2-087e6a82c373}">
 		<relationship name="effectChain">
 			<destination>{b708a9ca-8caa-4b36-a541-073d41e195a4}</destination>
@@ -87,6 +99,14 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ce6ecc6d-00e2-4cfb-9e32-72c51307e8c9}" />
+	<object class="SingleSound" id="{cf37094f-74cf-4b4f-94bc-2eea086a49c9}">
+		<property name="length">
+			<value>10</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{4981f132-4d1d-4621-bc0a-23955458089b}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerGroup" id="{1a0855ab-2d1b-4ab7-9819-98db686c7f05}">
 		<property name="name">
 			<value>Audio 1</value>
@@ -111,9 +131,11 @@
 	<object class="MixerBusEffectChain" id="{1474cfa5-2371-41e5-8183-2e082e7126ae}">
 		<relationship name="effects">
 			<destination>{6f7a9060-b9f3-46cb-b8b3-b5e060c6d80d}</destination>
+			<destination>{d9c48ec6-021d-4a9d-80a8-07bfffca2335}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{4ae7a706-1293-4345-81f0-c12ef0806618}" />
 	<object class="MixerBusFader" id="{0fc0d9ef-1ab7-4764-8aa5-2c40f1eebee7}" />
 	<object class="MixerBusFader" id="{6f7a9060-b9f3-46cb-b8b3-b5e060c6d80d}" />
+	<object class="LoudnessMeter" id="{d9c48ec6-021d-4a9d-80a8-07bfffca2335}" />
 </objects>

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{6bd72141-0984-4409-87e9-d96acb90b255}">
+		<property name="note">
+			<value>3D - Som da porta fechando </value>
+		</property>
 		<property name="color">
 			<value>Green</value>
 		</property>

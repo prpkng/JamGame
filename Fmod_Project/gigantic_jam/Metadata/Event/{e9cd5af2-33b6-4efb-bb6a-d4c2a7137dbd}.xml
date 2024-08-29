@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{e9cd5af2-33b6-4efb-bb6a-d4c2a7137dbd}">
+		<property name="note">
+			<value>2D -  Som para quando usar o óculos scanner - eu nao sei como ele ia ser
+mas imaginei como se fosse um  detector de radiação.
+
+Parâmetro 0.00 até 0.99 - Inicia o equipamento e fica em loop o som para a imagem 
+de detectar pegadas/digitais
+Parâmetro 1.00 - para finalizar o uso do óculos </value>
+		</property>
 		<property name="color">
 			<value>Green</value>
 		</property>

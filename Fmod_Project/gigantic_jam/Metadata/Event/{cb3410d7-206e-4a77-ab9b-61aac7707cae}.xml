@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{cb3410d7-206e-4a77-ab9b-61aac7707cae}">
+		<property name="note">
+			<value>3D - som do esfregão 
+
+o funcionamento é quase parecido com os dos aspirador
+
+Vai usar a condição de parametro ESFREGAO
+
+Parâmetro 0.00 até 0.99 inicia o som - para quando começar a esfregar
+Parâmetro 1.00 para finalizar - chamar esse parâmetro para finalizar </value>
+		</property>
 		<property name="color">
 			<value>Green</value>
 		</property>

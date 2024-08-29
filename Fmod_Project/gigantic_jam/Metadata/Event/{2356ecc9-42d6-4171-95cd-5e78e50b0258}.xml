@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{2356ecc9-42d6-4171-95cd-5e78e50b0258}">
+		<property name="note">
+			<value>3D - Som da porta abrindo</value>
+		</property>
 		<property name="color">
 			<value>Green</value>
 		</property>
@@ -179,7 +182,7 @@
 	</object>
 	<object class="AutomationPoint" id="{36834022-bc85-4544-9e22-e0ceb7fb5503}">
 		<property name="position">
-			<value>1.6200000000000001</value>
+			<value>0.54000000000000004</value>
 		</property>
 		<property name="value">
 			<value>1</value>

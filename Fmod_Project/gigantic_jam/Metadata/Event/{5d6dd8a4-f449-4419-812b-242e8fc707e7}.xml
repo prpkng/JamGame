@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{5d6dd8a4-f449-4419-812b-242e8fc707e7}">
+		<property name="note">
+			<value>3D - Passos lentos e molhados de sangue - Vai funcionar da seguinto forma:
+
+1 - chamar o evento quando um pé tocar, o solo, a frente 
+2 - quando  for chamar o segundo passo , o pé que ficou para trás, seguirá para frente, e
+deve-se chamar o KEY OFF, para fazer o som do ''sangue esticando''
+
+o evento vai funcionar como one shot, porém com a condição para dois sons.
+esse tipo de evento funciona igual a usar parâmetros, porém sem os números.</value>
+		</property>
 		<property name="color">
 			<value>Green</value>
 		</property>
